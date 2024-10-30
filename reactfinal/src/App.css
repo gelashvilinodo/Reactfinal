@@ -192,3 +192,77 @@
   font-size: 14px;
   margin-bottom: 20px;
 }
+
+/* edit page  */
+
+.form_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 10px;
+}
+
+.form_title {
+  color: aliceblue;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.form_edit {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.form_edit label {
+  color: white;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.form_edit input {
+  width: 230px;
+  border: none;
+  border-radius: 10px;
+  padding: 4px 8px;
+  background-color: transparent;
+  outline: none;
+  font-size: 18px;
+  font-weight: 400;
+  color: hsl(0, 0%, 100%);
+}
+
+.form_edit div {
+  width: 350px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 10px;
+  background-color: hsla(0, 0%, 100%, 0.203);
+  transition: all .18s linear;
+}
+
+.form_edit div:hover {
+  transform: scale(1.02);
+}
+
+.submit_btn {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 10px;
+  background-color: hsla(0, 0%, 100%, 0.361);
+  color: aliceblue;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.submit_btn:hover {
+  background-color: hsla(0, 0%, 100%, 0.445);
+  color: hsla(208, 84%, 85%, 0.747);
+}
