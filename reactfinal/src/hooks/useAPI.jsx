@@ -1,5 +1,5 @@
 function useAPI(table, filter_key = "", method = "GET", data = {}) {
-  const api_token = "qbdffptcN7hlDxLY9pUD0BF1FD_pWGz0";
+  const api_token = "0lUx8E4GxrmuytmxCu_58ZG1NRLp35oz";
   const base_url = "http://localhost:8055/items";
 
   const headers = {
@@ -35,8 +35,9 @@ function useAPI(table, filter_key = "", method = "GET", data = {}) {
       headers: headers,
     }).then(handleResponse);
   }
+  // console.log(filter_key);
 
-  return fetch(`${base_url}/${table}?filter[username][_eq]=${filter_key}`, {
+  return fetch(`${base_url}/${table}`, {
     method: method,
     headers: headers,
   }).then(handleResponse);

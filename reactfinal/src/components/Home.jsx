@@ -4,11 +4,14 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 import User from "./User";
+import Information from "./Information";
+import Industry from "./Idustry";
+import Language from "./Language";
+import Experience from "./Experience";
+import Education from "./Education";
 
 function Home() {
   let user = useParams();
-  console.log(user);
-
   const data = useSelector((state) => state.cv.data.user);
   const dispatch = useDispatch();
 
@@ -23,9 +26,15 @@ function Home() {
   return (
     <>
       <div className="left_column">
-        <User {...data} />
+        <User {...data[0]} />
+        <Information {...data[0]} />
+        <Industry />
+        <Language />
       </div>
-      <div className="right_column"></div>
+      <div className="right_column">
+        <Experience />
+        <Education />
+      </div>
     </>
   );
 }

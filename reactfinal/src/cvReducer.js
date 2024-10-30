@@ -35,12 +35,28 @@ export const getEducation = createAsyncThunk("cv/getEducation", async () => {
   return response;
 });
 
+export const getLanguages = createAsyncThunk("cv/getLanguages", async () => {
+  const response = await useAPI("languages");
+  return response;
+});
+
+export const getExperience = createAsyncThunk("cv/getExperience", async () => {
+  const response = await useAPI("experience");
+  return response;
+});
+
 // slice
 
 export const cvSlice = createSlice({
   name: "cv",
   initialState: {
-    data: { user: {}, education: [], industry: [] },
+    data: {
+      user: {},
+      education: [],
+      industry: [],
+      languages: [],
+      getExperience: [],
+    },
   },
   reducers: {},
   extraReducers: (builder) => {
@@ -66,6 +82,14 @@ export const cvSlice = createSlice({
 
     builder.addCase(getEducation.fulfilled, (state, action) => {
       state.data.education = action.payload;
+    });
+
+    builder.addCase(getLanguages.fulfilled, (state, action) => {
+      state.data.languages = action.payload;
+    });
+
+    builder.addCase(getExperience.fulfilled, (state, action) => {
+      state.data.experience = action.payload;
     });
   },
 });
